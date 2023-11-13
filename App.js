@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Screen_Home } from './src/components/Screen_Home/Screen_Home';
 import { NavigationContainer } from '@react-navigation/native';
+import DichVanBan from './src/components/DichVanBan/DichVanBan';
 
 const Stack= createNativeStackNavigator();
 
@@ -10,17 +11,18 @@ export default function App() {
 
   
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name="Home" 
-          component={Screen_Home}
-          options={{
-            headerShown: false
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen 
+    //       name="Home" 
+    //       component={Screen_Home}
+    //       options={{
+    //         headerShown: false
+    //       }}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <DichVanBan/>
   );
 }
 
