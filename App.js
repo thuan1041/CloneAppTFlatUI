@@ -4,6 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Screen_Home } from './src/components/Screen_Home/Screen_Home';
 import { NavigationContainer } from '@react-navigation/native';
 import DichVanBan from './src/components/DichVanBan/DichVanBan';
+import UngDungHocTiengAnhKhac from './src/components/UngDungHocTiengAnhKhac/UngDungHocTiengAnhKhac';
+import DongTuBatQuyTac from './src/components/DongTuBatQuyTac/DongTuBatQuyTac';
+import TuVungToeic from './src/components/TuVungToeic/TuVungToeic';
+import TuVungIELTS from './src/components/TuVungIELTS/TuVungIELTS';
 
 const Stack= createNativeStackNavigator();
 
@@ -22,7 +26,11 @@ export default function App() {
     //     />
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <DichVanBan/>
+    // <DichVanBan/>
+    // <UngDungHocTiengAnhKhac/>
+    // <DongTuBatQuyTac/>
+    // <TuVungToeic/>
+    <TuVungIELTS/>
   );
 }
 
