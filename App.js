@@ -6,15 +6,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Recent_Words } from './src/components/Recent_Words/Recent_Words';
 import { Your_Words } from './src/components/Your_Words/Your_Words';
 import { Account } from './src/components/Account/Account';
+import { VietAnh_Dictionary } from './src/components/VietAnh_Dictionary/VietAnh_Dictionary';
+import { Vip_Practice } from './src/components/VIP_Practice/Vip_Practice';
+import { VIP_SGK } from './src/components/VIP_SGK/VIP_SGK';
+import { VIP_SGKNEW } from './src/components/VIP_SGKNEW/VIP_SGKNEW';
+
 
 const Stack= createNativeStackNavigator();
 
 export default function App() {
-
-  
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Account'>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen 
           name="Home" 
           component={Screen_Home}
@@ -42,6 +45,38 @@ export default function App() {
         <Stack.Screen
           name="Account"
           component={Account}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="VietAnh_Dictionary"
+          component={VietAnh_Dictionary}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="Vip_Practice"
+          component={Vip_Practice}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="VIP_SGK"
+          component={VIP_SGK}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="VIP_SGKNEW"
+          component={VIP_SGKNEW}
           options={{
             headerShown: false
           }}

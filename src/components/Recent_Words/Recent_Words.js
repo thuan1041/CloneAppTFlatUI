@@ -5,7 +5,7 @@ import { faChevronLeft, faBars, faMagnifyingGlass, faMicrophone  } from '@fortaw
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
-export const Recent_Words = () => {
+export const Recent_Words = ({navigation}) => {
     const [font] = useFonts({
         'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
     });
@@ -33,7 +33,7 @@ export const Recent_Words = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header} >
-                <Pressable style={styles.back}>
+                <Pressable style={styles.back} onPress={()=>{navigation.navigate('Home')}}>
                     <FontAwesomeIcon size={25} style={styles.icon} icon={faChevronLeft} />
                     <Text style={styles.textBack}>Trang chủ</Text>
                 </Pressable>

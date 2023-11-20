@@ -6,12 +6,18 @@ import { useFonts } from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCamera, faMobileScreen } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
-export const Screen_Home = () => {
+export const Screen_Home = ({navigation}) => {
     const [font] = useFonts({
         'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
     });
+
+    // const navigation = useNavigation();
+    const onPress = () => {
+        navigation.navigate('Recent_Words');
+    };
 
     return (
         <View style={styles.container}>
@@ -46,7 +52,7 @@ export const Screen_Home = () => {
             <View style={styles.body}>
                 <View style={styles.body_content}> 
                     <View style={{marginTop: 6}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('Recent_Words')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/6.png')}></Image>
                             <Text style={styles.textInOP}> Từ đã tra </Text>
                         </Pressable>
@@ -54,14 +60,14 @@ export const Screen_Home = () => {
 
                     <View style={{marginTop: 4, flexDirection: 'row', justifyContent: 'space-between'}}>
                         <View>
-                            <Pressable style={styles.buttonOP1}>
+                            <Pressable style={styles.buttonOP1} onPress={()=>{navigation.navigate('Your_Words')}}>
                                 <Image style={styles.imgInOP} source={require('../../../assets/images/8.png')}></Image>
                                 <Text style={styles.textInOP}> Từ của bạn </Text>
                             </Pressable>
                         </View>
 
                         <View>
-                            <Pressable style={styles.buttonOP1}>
+                            <Pressable style={styles.buttonOP1} onPress={()=>{navigation.navigate('Account')}}>
                                 <Image style={styles.imgInOP} source={require('../../../assets/images/7.png')}></Image>
                                 <Text style={styles.textInOP}> Tài khoản </Text>
                             </Pressable>
@@ -69,28 +75,28 @@ export const Screen_Home = () => {
                     </View>
 
                     <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('VietAnh_Dictionary')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/1.png')}></Image>
                             <Text style={styles.textInOP}> Từ điển việt anh </Text>
                         </Pressable>
                     </View>
 
                     <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('Vip_Practice')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng luyện thi VIP</Text>
                         </Pressable>
                     </View>
 
                     <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGK')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK </Text>
                         </Pressable>
                     </View>
 
                     <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGKNEW')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK mới </Text>
                         </Pressable>

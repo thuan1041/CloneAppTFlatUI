@@ -5,7 +5,7 @@ import { faChevronLeft, faBars, faMagnifyingGlass, faMicrophone  } from '@fortaw
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
-export const Your_Words = ({navigation}) => {
+export const VIP_SGKNEW = ({navigation}) => {
     const [font] = useFonts({
         'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
     });
@@ -17,19 +17,7 @@ export const Your_Words = ({navigation}) => {
                     <Text style={styles.textBack}>Trang chủ</Text>
                 </Pressable>
 
-                <Text style={styles.nameHeader}>Từ của bạn</Text>
-
-                <Pressable style={{marginRight: 5}}>
-                    <FontAwesomeIcon style={styles.icon} size={25} icon={faBars} />
-                </Pressable>
-            </View>
-
-            <View style={styles.body}>
-                <View style={styles.viewSearchInput}>
-                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30}} size={20} icon={faMagnifyingGlass} />
-                    <TextInput style={styles.searchInput} placeholder='Tìm từ trong thư mục' ></TextInput>
-                    <FontAwesomeIcon style={{marginLeft: -30}} size={20} icon={faMicrophone} />
-                </View>
+                <Text style={styles.nameHeader}>Từ vựng VIP SGKN</Text>
             </View>
         </View>
     );

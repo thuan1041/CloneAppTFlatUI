@@ -5,7 +5,7 @@ import { faChevronLeft, faEnvelope , faApple} from '@fortawesome/free-solid-svg-
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
-export const Account = () => {
+export const Account = ({navigation}) => {
     const [font] = useFonts({
         'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
     });
@@ -13,7 +13,7 @@ export const Account = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header} >
-                <Pressable style={styles.back}>
+                <Pressable style={styles.back} onPress={()=>{navigation.navigate('Home')}}>
                     <FontAwesomeIcon size={25} style={styles.icon} icon={faChevronLeft} />
                     <Text style={styles.textBack}>Trang chủ</Text>
                 </Pressable>
