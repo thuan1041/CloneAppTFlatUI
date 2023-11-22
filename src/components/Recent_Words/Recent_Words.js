@@ -6,9 +6,9 @@ import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const Recent_Words = ({navigation}) => {
-    const [font] = useFonts({
-        'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    });
+    // const [font] = useFonts({
+    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
+    // });
 
     const Data = [
         {

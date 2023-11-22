@@ -6,18 +6,12 @@ import { useFonts } from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCamera, faMobileScreen } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
-import { useNavigation } from '@react-navigation/native';
 
 
 export const Screen_Home = ({navigation}) => {
-    const [font] = useFonts({
-        'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    });
-
-    // const navigation = useNavigation();
-    const onPress = () => {
-        navigation.navigate('Recent_Words');
-    };
+    // const [font] = useFonts({
+    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
+    // });
 
     return (
         <View style={styles.container}>
@@ -58,7 +52,7 @@ export const Screen_Home = ({navigation}) => {
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4, flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <View style={{marginTop: 6, flexDirection: 'row', justifyContent: 'space-between'}}>
                         <View>
                             <Pressable style={styles.buttonOP1} onPress={()=>{navigation.navigate('Your_Words')}}>
                                 <Image style={styles.imgInOP} source={require('../../../assets/images/8.png')}></Image>
@@ -74,42 +68,42 @@ export const Screen_Home = ({navigation}) => {
                         </View>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('VietAnh_Dictionary')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/1.png')}></Image>
                             <Text style={styles.textInOP}> Từ điển việt anh </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('Vip_Practice')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng luyện thi VIP</Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGK')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGKNEW')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK mới </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/2.png')}></Image>
                             <Text style={styles.textInOP}> Dịch văn bản </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/9.png')}></Image>
                             <Text style={styles.textInOP}> Ứng dụng học tiếng anh khác </Text>
@@ -122,7 +116,7 @@ export const Screen_Home = ({navigation}) => {
                             <Text style={styles.textInOP}> Gói từ miễn phí </Text>           
                         </View>
 
-                        <View style={{flexDirection: 'row'}}>
+                        <View style={{flexDirection: 'row', marginTop: 6}}>
                             <View >
                                 <Pressable>
                                     <Text style={styles.textInOP}> Động từ bất quy tắc </Text>
@@ -145,8 +139,8 @@ export const Screen_Home = ({navigation}) => {
                         </View>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 20}}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{alert('cài đặt nè:)')}}>
                         <Image style={styles.imgInOP} source={require('../../../assets/images/5.png')}></Image>
                             <Text style={styles.textInOP}> Cài đặt </Text>
                         </Pressable>

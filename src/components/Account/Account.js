@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, Pressable, Image} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faChevronLeft, faEnvelope , faApple} from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const Account = ({navigation}) => {
-    const [font] = useFonts({
-        'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    });
+    // const [font] = useFonts({
+    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
+    // });
 
     return (
         <View style={styles.container}>

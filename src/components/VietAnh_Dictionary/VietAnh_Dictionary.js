@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faChevronLeft, faBars, faMagnifyingGlass, faMicrophone  } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faMagnifyingGlass, faMicrophone  } from '@fortawesome/free-solid-svg-icons';
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const VietAnh_Dictionary = ({navigation}) => {
-    const [font] = useFonts({
-        'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    });
+    // const [font] = useFonts({
+    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
+    // });
     return (
         <View style={styles.container}>
             <View style={styles.header} >

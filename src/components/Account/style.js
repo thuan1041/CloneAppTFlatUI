@@ -24,21 +24,21 @@ export const styles = StyleSheet.create({
     },
 
     nameHeader: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 20,
         color: '#FFFFFF',
         marginLeft: 40
     },
 
     textBack: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 18,
         color: '#FFFFFF',
         opacity: 0.7
     },
 
     textInfo: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 18,
         marginLeft: 10,
         marginRight: 10,
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
     },
 
     textLogin: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 18,
         fontWeight: 'bold',
     },
@@ -71,9 +71,4 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 50
     },
-    
-
-
-    
-
 });

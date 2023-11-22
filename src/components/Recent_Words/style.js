@@ -26,14 +26,14 @@ export const styles = StyleSheet.create({
     },
 
     nameHeader: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 20,
         color: '#FFFFFF',
         marginLeft: -80,
     },
 
     textBack: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 18,
         color: '#FFFFFF',
         opacity: 0.7
@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fafafa',
         borderRadius: 8,
         paddingLeft: 40,
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 18,
         // opacity: 0.7,
     },
