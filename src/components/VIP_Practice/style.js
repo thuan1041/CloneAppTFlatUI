@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
         // fontFamily: 'Inder',
         fontSize: 20,
         color: '#FFFFFF',
-        marginLeft: 10,
+        marginLeft: 20,
     },
 
     textBack: {

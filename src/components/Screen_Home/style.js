@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
         // fontFamily: 'Inter',
         color: '#FFFFFF',
         fontSize: 14,
-        // fontWeight: 'normal'
+        fontWeight: '500'
     },
 
     viewText: {
@@ -92,6 +92,7 @@ export const styles = StyleSheet.create({
     textInOP: {
         // fontFamily: 'Inter',
         fontSize: 16,
-        marginLeft: 10
+        marginLeft: 10,
+        fontWeight: '500'
     },
 })

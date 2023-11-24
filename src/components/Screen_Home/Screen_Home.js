@@ -17,7 +17,7 @@ export const Screen_Home = ({navigation}) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
-                    <Text> TFlat </Text> 
+                    <Text style={styles.textOP}> TFlat </Text> 
                     <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
                 </View> 
 
@@ -145,7 +145,6 @@ export const Screen_Home = ({navigation}) => {
                             <Text style={styles.textInOP}> Cài đặt </Text>
                         </Pressable>
                     </View>
-                    
                 </View>
             </View>
         </View>

@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     back: {
         flexDirection: 'row',
         alignItems: 'center',
-        // marginLeft: 5,
+        marginLeft: 5,
     },
 
     icon: {
@@ -44,6 +44,7 @@ export const styles = StyleSheet.create({
         marginRight: 10,
         marginTop: 30,
         textAlign: 'center',
+        fontWeight: '400'
     },
 
     buttonLogin: {
@@ -54,6 +55,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#FAFAFA',
         borderRadius: 8,
+        borderColor: '#000000',
+        borderWidth: 1
     },
 
     textLogin: {

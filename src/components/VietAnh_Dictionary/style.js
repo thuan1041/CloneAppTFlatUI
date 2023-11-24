@@ -12,7 +12,11 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         // justifyContent: 'space-between',
         alignItems: 'center',
-        
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex:10
     },
 
     back: {
@@ -40,7 +44,10 @@ export const styles = StyleSheet.create({
     },
 
     body: {
-        alignItems: 'center',
+        marginLeft: 8,
+        marginRight: 8,
+        marginTop: 10,
+        marginBottom: 80,
     },
 
     searchInput: {
@@ -51,14 +58,14 @@ export const styles = StyleSheet.create({
         paddingLeft: 40,
         // fontFamily: 'Inder',
         fontSize: 18,
-        // opacity: 0.7,
+        opacity: 0.5,
     },
 
     viewSearchInput: {
-        flex: 1,
+        // flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 8,
+        marginTop: 110,
     },
 
     viewAria: {
@@ -76,5 +83,31 @@ export const styles = StyleSheet.create({
         // fontFamily: 'Inder',
         fontSize: 18,
         opacity: 0.7
+    },
+
+    footer: {
+        backgroundColor: '#E6E6E6',
+        height: 80,
+        width: '100%',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 10
+    },
+
+    btnViewItem: {
+        width: 375,
+        height:50,
+        backgroundColor: '#fafafa',
+        borderRadius: 8,
+        marginTop: 1,
+        justifyContent: 'center',
+    },
+
+    textName: {
+        fontSize: 16,
+        marginLeft: 20,
+        fontWeight: '400'
     }
 });
