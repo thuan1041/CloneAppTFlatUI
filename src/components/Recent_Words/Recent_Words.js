@@ -120,6 +120,9 @@ export const Recent_Words = ({navigation}) => {
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 ></FlatList>
+                {/* {
+                    Data.map(renderItem)
+                } */}
             </ScrollView>
 
             <View style={styles.footer}>

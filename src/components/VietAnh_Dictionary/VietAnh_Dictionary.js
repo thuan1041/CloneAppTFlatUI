@@ -19,11 +19,13 @@ export const VietAnh_Dictionary = ({navigation}) => {
         .then(json => {
             setData(json);
         })
-    }, [data])
+    }, [])
 
     const renderItem = (item) => (
-        <Pressable style={styles.btnViewItem} onPress={()=>{alert(item.id)}} >
-            <Text style={styles.textName}>{item.id}</Text>
+        <Pressable key={item.id} style={styles.btnViewItem} onPress={()=>{
+            navigation.navigate('Translate_Dictionary', {english: item.english, mean: item.mean})
+        }}>
+            <Text style={styles.textName}>{item.mean}</Text>
         </Pressable>
     )
 
@@ -46,24 +48,12 @@ export const VietAnh_Dictionary = ({navigation}) => {
                 </View>
             </View>
 
-            <ScrollView style={styles.body}>
-                {/* <View style={styles.viewSearchInput}>
-                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30}} size={20} icon={faMagnifyingGlass} />
-                    <TextInput style={styles.searchInput} placeholder='Nhập từ tiếng việt' ></TextInput>
-                    <FontAwesomeIcon style={{marginLeft: -30}} size={20} icon={faMicrophone} />
-                </View>
-
-                <View style={styles.viewAria}>
-                    <Text style={styles.textAria}> Nhập từ tiếng Việt có dấu hoặc không dấu vào ô bên trên để tra từ </Text>
-                    <Text style={[styles.textAria, {marginTop:10}]}> Lưu ý: Nếu nhập từ có dấu thì phải có dấu đầy đủ, còn nếu nhập từ không dấu thì tất cả phải không dấu </Text>
-                </View> */}
-                {
-                    data.map(renderItem)
-                }
-            </ScrollView>
-
-            <View style={styles.footer} >
-
+            <View style={{alignItems: 'center'}}>
+                <ScrollView style={styles.body}>
+                    {
+                        data.map(renderItem)
+                    }
+                </ScrollView>
             </View>
         </View>
     );

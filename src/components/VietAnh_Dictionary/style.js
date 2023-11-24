@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
         // fontFamily: 'Inder',
         fontSize: 20,
         color: '#FFFFFF',
-        marginLeft: 10,
+        marginLeft: 15,
     },
 
     textBack: {
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
         marginLeft: 8,
         marginRight: 8,
         marginTop: 10,
-        marginBottom: 80,
+        marginBottom: 40,
     },
 
     searchInput: {
@@ -85,17 +85,6 @@ export const styles = StyleSheet.create({
         opacity: 0.7
     },
 
-    footer: {
-        backgroundColor: '#E6E6E6',
-        height: 80,
-        width: '100%',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        zIndex: 10
-    },
-
     btnViewItem: {
         width: 375,
         height:50,
@@ -108,6 +97,6 @@ export const styles = StyleSheet.create({
     textName: {
         fontSize: 16,
         marginLeft: 20,
-        fontWeight: '400'
+        fontWeight: '500'
     }
 });

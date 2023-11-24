@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     },
 
     body_content: {
-        width: 366,
+        width: '94%',
     },
 
     imgInOP: {
@@ -66,7 +66,7 @@ export const styles = StyleSheet.create({
 
     buttonOP: {
         height: 46,
-        width: 366,
+        width: '100%',
         backgroundColor: '#FAFAFA',
         flexDirection: 'row',
         alignItems: 'center',
@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
 
     buttonOP2:{
         height: 100,
-        width: 366,
+        width: '100%',
         backgroundColor: '#FAFAFA',
         marginTop: 6,
         borderRadius: 8,

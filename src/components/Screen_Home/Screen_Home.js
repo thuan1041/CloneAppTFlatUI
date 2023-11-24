@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, SafeAreaView } from 'react-native';
 import { styles } from './style';
 import { TextInput } from 'react-native';
 import { useFonts } from 'expo-font';
@@ -15,33 +15,35 @@ export const Screen_Home = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
-                    <Text style={styles.textOP}> TFlat </Text> 
-                    <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
+            <SafeAreaView style={{backgroundColor: '#0156A7'}}>
+                <View style={styles.header}>
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
+                        <Text style={styles.textOP}> TFlat </Text> 
+                        <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
+                    </View> 
+
+                    <View style={styles.viewText}> 
+                        <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh'></TextInput>
+                    </View>
+
+                    <View style={styles.viewOP}> 
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faMobileScreen} />
+                            <Text style={styles.textOP}> Dịch màn hình </Text>
+                        </View>
+
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
+                            <Text style={styles.textOP}> Dịch máy ảnh </Text>
+                        </View>
+
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faImage} />
+                            <Text style={styles.textOP}> Dịch hình ảnh </Text>
+                        </View>
+                    </View>
                 </View> 
-
-                <View style={styles.viewText}> 
-                    <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh'></TextInput>
-                </View>
-
-                <View style={styles.viewOP}> 
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faMobileScreen} />
-                        <Text style={styles.textOP}> Dịch màn hình </Text>
-                    </View>
-
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
-                        <Text style={styles.textOP}> Dịch máy ảnh </Text>
-                    </View>
-
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faImage} />
-                        <Text style={styles.textOP}> Dịch hình ảnh </Text>
-                    </View>
-                </View>
-            </View> 
+            </SafeAreaView>
 
             <View style={styles.body}>
                 <View style={styles.body_content}> 
@@ -111,7 +113,7 @@ export const Screen_Home = ({navigation}) => {
                     </View>
 
                     <View style={styles.buttonOP2}>
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/4.png')}></Image>
                             <Text style={styles.textInOP}> Gói từ miễn phí </Text>           
                         </View>

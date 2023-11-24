@@ -10,6 +10,7 @@ import { VietAnh_Dictionary } from './src/components/VietAnh_Dictionary/VietAnh_
 import { Vip_Practice } from './src/components/VIP_Practice/Vip_Practice';
 import { VIP_SGK } from './src/components/VIP_SGK/VIP_SGK';
 import { VIP_SGKNEW } from './src/components/VIP_SGKNEW/VIP_SGKNEW';
+import { Translate_Dictionary } from './src/components/Translate_Dictionary/Translate_Dictionary';
 
 
 const Stack= createNativeStackNavigator();
@@ -77,6 +78,14 @@ export default function App() {
         <Stack.Screen
           name="VIP_SGKNEW"
           component={VIP_SGKNEW}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="Translate_Dictionary"
+          component={Translate_Dictionary}
           options={{
             headerShown: false
           }}
