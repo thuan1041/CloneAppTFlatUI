@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, SafeAreaView } from 'react-native';
 import { styles } from './style';
 import { TextInput } from 'react-native';
 import { useFonts } from 'expo-font';
@@ -8,102 +8,104 @@ import { faCamera, faMobileScreen } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
 
 
-export const Screen_Home = () => {
-    const [font] = useFonts({
-        'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    });
+export const Screen_Home = ({navigation}) => {
+    // const [font] = useFonts({
+    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
+    // });
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
-                    <Text> TFlat </Text> 
-                    <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
+            <SafeAreaView style={{backgroundColor: '#0156A7'}}>
+                <View style={styles.header}>
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
+                        <Text style={styles.textOP}> TFlat </Text> 
+                        <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
+                    </View> 
+
+                    <View style={styles.viewText}> 
+                        <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh'></TextInput>
+                    </View>
+
+                    <View style={styles.viewOP}> 
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faMobileScreen} />
+                            <Text style={styles.textOP}> Dịch màn hình </Text>
+                        </View>
+
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
+                            <Text style={styles.textOP}> Dịch máy ảnh </Text>
+                        </View>
+
+                        <View style={{alignItems: 'center'}}>
+                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faImage} />
+                            <Text style={styles.textOP}> Dịch hình ảnh </Text>
+                        </View>
+                    </View>
                 </View> 
-
-                <View style={styles.viewText}> 
-                    <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh'></TextInput>
-                </View>
-
-                <View style={styles.viewOP}> 
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faMobileScreen} />
-                        <Text style={styles.textOP}> Dịch màn hình </Text>
-                    </View>
-
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
-                        <Text style={styles.textOP}> Dịch máy ảnh </Text>
-                    </View>
-
-                    <View style={{alignItems: 'center'}}>
-                        <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faImage} />
-                        <Text style={styles.textOP}> Dịch hình ảnh </Text>
-                    </View>
-                </View>
-            </View> 
+            </SafeAreaView>
 
             <View style={styles.body}>
                 <View style={styles.body_content}> 
                     <View style={{marginTop: 6}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('Recent_Words')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/6.png')}></Image>
                             <Text style={styles.textInOP}> Từ đã tra </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4, flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <View style={{marginTop: 6, flexDirection: 'row', justifyContent: 'space-between'}}>
                         <View>
-                            <Pressable style={styles.buttonOP1}>
+                            <Pressable style={styles.buttonOP1} onPress={()=>{navigation.navigate('Your_Words')}}>
                                 <Image style={styles.imgInOP} source={require('../../../assets/images/8.png')}></Image>
                                 <Text style={styles.textInOP}> Từ của bạn </Text>
                             </Pressable>
                         </View>
 
                         <View>
-                            <Pressable style={styles.buttonOP1}>
+                            <Pressable style={styles.buttonOP1} onPress={()=>{navigation.navigate('Account')}}>
                                 <Image style={styles.imgInOP} source={require('../../../assets/images/7.png')}></Image>
                                 <Text style={styles.textInOP}> Tài khoản </Text>
                             </Pressable>
                         </View>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 6}}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('VietAnh_Dictionary')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/1.png')}></Image>
                             <Text style={styles.textInOP}> Từ điển việt anh </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 6}}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('Vip_Practice')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng luyện thi VIP</Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 6}}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGK')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 6}}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('VIP_SGKNEW')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/3.png')}></Image>
                             <Text style={styles.textInOP}> Từ vựng VIP SGK mới </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/2.png')}></Image>
                             <Text style={styles.textInOP}> Dịch văn bản </Text>
                         </Pressable>
                     </View>
 
-                    <View style={{marginTop: 4}}>
+                    <View style={{marginTop: 6}}>
                         <Pressable style={styles.buttonOP}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/9.png')}></Image>
                             <Text style={styles.textInOP}> Ứng dụng học tiếng anh khác </Text>
@@ -111,12 +113,12 @@ export const Screen_Home = () => {
                     </View>
 
                     <View style={styles.buttonOP2}>
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/4.png')}></Image>
                             <Text style={styles.textInOP}> Gói từ miễn phí </Text>           
                         </View>
 
-                        <View style={{flexDirection: 'row'}}>
+                        <View style={{flexDirection: 'row', marginTop: 6}}>
                             <View >
                                 <Pressable>
                                     <Text style={styles.textInOP}> Động từ bất quy tắc </Text>
@@ -139,13 +141,12 @@ export const Screen_Home = () => {
                         </View>
                     </View>
 
-                    <View style={{marginTop: 4}}>
-                        <Pressable style={styles.buttonOP}>
+                    <View style={{marginTop: 20}}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{alert('cài đặt nè:)')}}>
                         <Image style={styles.imgInOP} source={require('../../../assets/images/5.png')}></Image>
                             <Text style={styles.textInOP}> Cài đặt </Text>
                         </Pressable>
                     </View>
-                    
                 </View>
             </View>
         </View>

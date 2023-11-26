@@ -15,7 +15,9 @@ export const styles = StyleSheet.create({
     },
 
     header: {
-        backgroundColor: '#0156A7'
+        backgroundColor: '#0156A7',
+        height: 170,
+        width: '100%'
     },
 
     textInHE: {
@@ -25,24 +27,25 @@ export const styles = StyleSheet.create({
         borderRadius: 23,
         justifyContent: 'center',
         textAlign: 'center',
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 16,
     }, 
     viewOP: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginTop: 15
     },
 
     textOP: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         color: '#FFFFFF',
         fontSize: 14,
-        // fontWeight: 'normal'
+        fontWeight: '500'
     },
 
     viewText: {
         alignItems: 'center',
-        marginTop: 5,
+        marginTop: 10,
         marginBottom: 10
     },
 
@@ -52,7 +55,7 @@ export const styles = StyleSheet.create({
     },
 
     body_content: {
-        width: 366,
+        width: '94%',
     },
 
     imgInOP: {
@@ -62,15 +65,15 @@ export const styles = StyleSheet.create({
     },
 
     buttonOP: {
-        height: 44,
-        width: 366,
+        height: 46,
+        width: '100%',
         backgroundColor: '#FAFAFA',
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 8,
     }, 
     buttonOP1: {
-        height: 44,
+        height: 46,
         width: 180,
         backgroundColor: '#FAFAFA',
         flexDirection: 'row',
@@ -79,18 +82,17 @@ export const styles = StyleSheet.create({
     },
 
     buttonOP2:{
-        height: 90,
-        width: 366,
+        height: 100,
+        width: '100%',
         backgroundColor: '#FAFAFA',
-        marginTop: 4,
+        marginTop: 6,
         borderRadius: 8,
     },
 
     textInOP: {
-        fontFamily: 'Inder',
+        // fontFamily: 'Inter',
         fontSize: 16,
-        marginLeft: 10
+        marginLeft: 10,
+        fontWeight: '500'
     },
-
-    
 })
