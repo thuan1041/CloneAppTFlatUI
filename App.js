@@ -8,6 +8,7 @@ import UngDungHocTiengAnhKhac from './src/components/UngDungHocTiengAnhKhac/UngD
 import DongTuBatQuyTac from './src/components/DongTuBatQuyTac/DongTuBatQuyTac';
 import TuVungToeic from './src/components/TuVungToeic/TuVungToeic';
 import TuVungIELTS from './src/components/TuVungIELTS/TuVungIELTS';
+import CaiDat from './src/components/CaiDat/CaiDat';
 
 const Stack= createNativeStackNavigator();
 
@@ -30,7 +31,8 @@ export default function App() {
     // <UngDungHocTiengAnhKhac/>
     // <DongTuBatQuyTac/>
     // <TuVungToeic/>
-    <TuVungIELTS/>
+    // <TuVungIELTS/>
+    <CaiDat/>
   );
 }
 

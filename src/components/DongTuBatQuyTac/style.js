@@ -94,7 +94,8 @@ export const styles = StyleSheet.create({
     png1: {
         width:18,
         height:18,
-      
+        // position:'absolute',
+        // top:148
     },
     png2: {
         width:28,
@@ -105,7 +106,7 @@ export const styles = StyleSheet.create({
     },
     png3: {
         width:24,
-        height:17
+        height:17,
     },
     p:{
         position:"absolute",
