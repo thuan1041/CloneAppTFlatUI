@@ -51,10 +51,9 @@ export const styles = StyleSheet.create({
     },
 
     textMean: {
-        fontSize: 18,
-        fontWeight: '400',
-        textDecorationLine: 'underline',
-        fontWeight: 'bold'
+        fontSize: 20,
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',  
     },
 
     viewMean: {
@@ -64,12 +63,11 @@ export const styles = StyleSheet.create({
     },
 
     textEnglish: {
-        fontSize: 18,
+        fontSize: 20,
         marginLeft: 10,
         fontWeight: '600',
         // color: '#B96BD8',
         color: 'violet',
-        
     },
 
     viewOP: {

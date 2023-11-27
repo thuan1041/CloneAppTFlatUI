@@ -1,29 +1,36 @@
-import React from 'react';
-import { View, Text, Image, Pressable, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, Pressable, SafeAreaView} from 'react-native';
 import { styles } from './style';
 import { TextInput } from 'react-native';
 import { useFonts } from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faCamera, faMobileScreen } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faMobileScreen, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
 
 
 export const Screen_Home = ({navigation}) => {
-    // const [font] = useFonts({
-    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    // });
+    const [text, setText] = useState('');
+
+    const handleTextSubmit = () => {
+        navigation.navigate('Translate_English', {english: text})
+      };
 
     return (
         <View style={styles.container}>
             <SafeAreaView style={{backgroundColor: '#0156A7'}}>
                 <View style={styles.header}>
-                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} >
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '95%', marginTop: 5}} >
                         <Text style={styles.textOP}> TFlat </Text> 
                         <Image style={styles.imgHE} source={require('../../../assets/images/10.png')} />
                     </View> 
 
                     <View style={styles.viewText}> 
-                        <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh'></TextInput>
+                        <TextInput style={styles.textInHE} placeholder='Tra từ Anh Việt - Việt Anh' value={text} onChangeText={(text)=>setText(text)} onSubmitEditing={handleTextSubmit}></TextInput>
+                        <Pressable style={styles.btnSearch} onPress={handleTextSubmit}>
+                            <FontAwesomeIcon style={{opacity: 0.5}} size={30} icon={faMagnifyingGlass} />
+                        </Pressable>
+
+                       
                     </View>
 
                     <View style={styles.viewOP}> 
@@ -71,7 +78,7 @@ export const Screen_Home = ({navigation}) => {
                     </View>
 
                     <View style={{marginTop: 6}}>
-                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('VietAnh_Dictionary')}}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('Dictionary_AnhViet')}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/1.png')}></Image>
                             <Text style={styles.textInOP}> Từ điển việt anh </Text>
                         </Pressable>

@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
         paddingLeft: 40,
         // fontFamily: 'Inder',
         fontSize: 18,
-        opacity: 0.5,
+        // opacity: 0.5,
     },
 
     viewSearchInput: {

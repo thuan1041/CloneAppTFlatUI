@@ -58,7 +58,6 @@ export const styles = StyleSheet.create({
         paddingLeft: 40,
         // fontFamily: 'Inter',
         fontSize: 18,
-        opacity: 0.5,
     },
 
     viewSearchInput: {
@@ -75,6 +74,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         borderRadius: 8,
         marginTop: 1,
+        
     },
 
     textWord: {

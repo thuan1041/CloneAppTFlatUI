@@ -46,7 +46,8 @@ export const styles = StyleSheet.create({
     body: {
         marginLeft: 8, 
         marginRight: 8,
-        marginTop: 100
+        marginTop: 100,
+        marginBottom: 35
     },
 
     textGT: {

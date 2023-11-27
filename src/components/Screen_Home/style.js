@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
     header: {
         backgroundColor: '#0156A7',
         height: 170,
-        width: '100%'
+        width: '100%',
+        alignItems: 'center'
     },
 
     textInHE: {
@@ -31,22 +32,26 @@ export const styles = StyleSheet.create({
         fontSize: 16,
     }, 
     viewOP: {
+        // flex:1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginTop: 15
+        justifyContent: 'space-between',
+        marginTop: 15,
+        width: '90%',
     },
 
     textOP: {
         // fontFamily: 'Inter',
         color: '#FFFFFF',
         fontSize: 14,
-        fontWeight: '500'
+        fontWeight: '500',
+        opacity: 0.8,
     },
 
     viewText: {
         alignItems: 'center',
         marginTop: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        flexDirection: 'row'
     },
 
     body: {
@@ -94,5 +99,14 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         marginLeft: 10,
         fontWeight: '500'
+    },
+
+    btnSearch: {
+        height: 40, 
+        width: 40, 
+        // backgroundColor: 'violet', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        marginLeft: -50
     },
 })

@@ -89,9 +89,9 @@ export const Your_Words = ({navigation}) => {
 
             <View style={styles.viewOP}>
                 <View style={styles.viewSearchInput}>
-                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30}} size={20} icon={faMagnifyingGlass} />
+                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30, opacity: 0.5}} size={20} icon={faMagnifyingGlass} />
                     <TextInput style={styles.searchInput} placeholder='Tìm từ trong thư mục' ></TextInput>
-                    <FontAwesomeIcon style={{marginLeft: -30}} size={20} icon={faMicrophone} />
+                    <FontAwesomeIcon style={{marginLeft: -30, opacity: 0.5}} size={20} icon={faMicrophone} />
                 </View>
 
                 <View style={{flexDirection: 'row', width: '100%', marginTop: 10, alignItems: 'center'}} >

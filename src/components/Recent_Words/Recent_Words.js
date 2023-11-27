@@ -1,92 +1,53 @@
-import React from 'react';
-import { View, Text, Pressable, TextInput, FlatList, ScrollView } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { View, Text, Pressable, TextInput,  ScrollView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faChevronLeft, faBars, faMagnifyingGlass, faMicrophone, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import { faSquare, faStar } from '@fortawesome/free-regular-svg-icons';
 import { useFonts } from 'expo-font';
 import { styles } from './style';
 
-export const Recent_Words = ({navigation}) => {
-    // const [font] = useFonts({
-    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    // });
+export const Recent_Words = ({route, navigation}) => {
+    // const { change } = route.params;
+    const [data, setData] = useState([]);
+    const [change, setChange] = useState(false);
+    // console.log(change);
 
-    const Data = [
-        {
-            id: 1,
-            word:'featured',
-            mean: 'có đường nét, có nét mặt'
-        },
+    useEffect(() => {
+        fetch('https://656046a683aba11d99d0843a.mockapi.io/apiTuDienRecent')
+        .then(response =>{
+            if (!response.ok) {
+                if (response.status === 429) {
+                    throw new Error('Too Many Requests');
+                } else {
+                    throw new Error('Other error');
+                }
+            }
+            return response.json();
+          })
+        .then(json => {
+            setData(json);
+        })
+        .catch((error) => {
+            console.error('Error:', error.message);
+        });
+    }, [data])
 
-        {
-            id: 2,
-            word:'actual',
-            mean: 'thực sự, có thật; trên thực tế'
-        },
+    const renderItem = (item) => (
+        <View key={item.id} style={{alignItems: 'center'}}>
+            <View style={styles.viewItem} >
+                <View style={{marginLeft: 10}}>
+                    <FontAwesomeIcon color='#0156A7' size={23} icon={faSquare} />
+                </View>
 
-        {
-            id: 3,
-            word:'expect',
-            mean: 'mong chờ, trông mong, mong đợi'
-        },
+                <View style={{marginLeft: 15}}>
+                    <Text style={styles.textWord}> {item.english} </Text>
+                    <Text style={styles.textMean}> {item.mean} </Text>
+                </View>
 
-        {
-            id: 4,
-            word:'pseudo',
-            mean: 'giả, giả tạo, không chân thật'
-        },
-
-        {
-            id: 5,
-            word:'appeal',
-            mean: 'sự hấp dẫn, sự thích thú'
-        },
-
-        {
-            id: 6,
-            word:'pseudo',
-            mean: 'giả, giả tạo, không chân thật'
-        },
-
-        {
-            id: 7,
-            word:'appeal',
-            mean: 'sự hấp dẫn, sự thích thú'
-        },
-
-        {
-            id: 8,
-            word:'appeal',
-            mean: 'sự hấp dẫn, sự thích thú'
-        },
-
-        {
-            id: 9,
-            word:'pseudo',
-            mean: 'giả, giả tạo, không chân thật'
-        },
-
-        {
-            id: 10,
-            word:'appeal1',
-            mean: 'sự hấp dẫn, sự thích thú'
-        },
-    ]
-
-    const renderItem = ({item}) => (
-        <View style={styles.viewItem}>
-            <View style={{marginLeft: 10}}>
-                <FontAwesomeIcon color='#0156A7' size={23} icon={faSquare} />
-            </View>
-
-            <View style={{marginLeft: 15}}>
-                <Text style={styles.textWord}> {item.word} </Text>
-                <Text style={styles.textMean}> {item.mean} </Text>
-            </View>
-
-            <View style={styles.viewFunc}>
-                <FontAwesomeIcon style={styles.volOP} size={21} color='#0156A7' icon={faVolumeHigh} />
-                <FontAwesomeIcon style={styles.volStar} size={21} color='#0156A7' icon={faStar} />
+                <View style={styles.viewFunc}>
+                    <FontAwesomeIcon style={styles.volOP} size={21} color='#0156A7' icon={faVolumeHigh} />
+                    <FontAwesomeIcon style={styles.volStar} size={21} color='#0156A7' icon={faStar} />
+                </View>
             </View>
         </View>
     )
@@ -108,21 +69,21 @@ export const Recent_Words = ({navigation}) => {
 
             <View style={{alignItems: 'center'}}>
                 <View style={styles.viewSearchInput}>
-                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30}} size={20} icon={faMagnifyingGlass} />
+                    <FontAwesomeIcon style={{zIndex: 0, marginRight: -30, opacity: 0.5}} size={20} icon={faMagnifyingGlass} />
                     <TextInput style={styles.searchInput} placeholder='Tìm từ trong thư mục' ></TextInput>
-                    <FontAwesomeIcon style={{marginLeft: -30}} size={20} icon={faMicrophone} />
+                    <FontAwesomeIcon style={{marginLeft: -30, opacity: 0.5}} size={20} icon={faMicrophone} />
                 </View>
             </View>
 
             <ScrollView style={styles.body}> 
-                <FlatList
+                {/* <FlatList
                     data={Data} 
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
-                ></FlatList>
-                {/* {
-                    Data.map(renderItem)
-                } */}
+                ></FlatList> */}
+                {
+                    data.map(renderItem)
+                }
             </ScrollView>
 
             <View style={styles.footer}>
