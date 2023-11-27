@@ -8,10 +8,15 @@ import { faImage } from '@fortawesome/free-regular-svg-icons';
 import { CheckBox } from 'react-native-web';
 // import { View, Text, CheckBox } from 'react-native-elements';
 // thu vien can cai dat: npm install react-native-elements
+import { Audio } from 'expo-av';
 
-function TuVungIELTS() {
 
+function TuVungIELTS({navigation}) {
+    const titleScreen = 'TuVungIELTS';
     const [data,setData] = useState([])
+    const [filteredData1, setFilteredData1] = useState([]);
+    const [sound, setSound] = useState();
+    var linkMp3 = '';
 
     useEffect(
         ()=>{
@@ -23,10 +28,10 @@ function TuVungIELTS() {
     {
         fetch("https://6558f205e93ca47020a9ee7e.mockapi.io/baitaplon/dong-tu-bat-quy-tac")
         .then(response => response.json())
-        // .then((json)=> setData(json))
         .then( json => {
             const filteredData = json.filter(item => item.loaiTu === "tuVungIELTS");
             setData(filteredData)
+            setFilteredData1(filteredData)
         }
         )
     }
@@ -34,8 +39,11 @@ function TuVungIELTS() {
     
     const [isChecked, setIsChecked] = useState(false);
     console.log(data);
-    const Item = ({id, tu, phienAm ,nghia}) => (
-        <View style={styles.ItemWrapper}>
+    const Item = ({id, tu, phienAm ,nghia, linkMp3Item}) => (
+        // <View style={styles.ItemWrapper}>
+        <TouchableOpacity style={styles.ItemWrapper} onPress={()=>{
+            navigation.navigate('WordDetail',{tu:tu,phienAm:phienAm,nghia:nghia,p:null,pp:null, titleScreen:titleScreen})
+        }}>
             <Text style={styles.tu}>{tu}</Text>
             <View style={styles.phienAmWrapper}>
                 <TouchableOpacity >
@@ -46,7 +54,11 @@ function TuVungIELTS() {
                 </TouchableOpacity>
                 <Text style={styles.phienAm}>{phienAm}</Text>
                 <View style={styles.iconWrapper}>
-                    <TouchableOpacity style={styles.loaWrapper}>
+                    <TouchableOpacity style={styles.loaWrapper} onPress={()=>{
+                        linkMp3 = require('../../../assets/mp3/file.mp3');
+                        renderSound
+                        playSound()
+                    }}>
                         <Image style={styles.pngLoa} source={require("../../../assets/images/Union.png")}></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.starWrapper}>
@@ -56,27 +68,65 @@ function TuVungIELTS() {
 
             </View>
             <Text style={styles.nghia}>{nghia}</Text>
-        </View>
+        </TouchableOpacity>
     )
+
+    const searchFilterFunction = (text) => {
+        if(text){  
+            const newData = data.filter(item => {
+                const itemData = item.tu ? item.tu.toUpperCase() : ''.toUpperCase();
+                const textData = text.toUpperCase();
+                return itemData.indexOf(textData) > -1;
+            })
+            setFilteredData1(newData);
+        } else {
+            setFilteredData1(data);
+        }
+    }
+    
+    // //read file am thanh mp3
+    const renderSound = useEffect(() => {
+        return () => {
+            if (sound) {
+                sound.unloadAsync();
+            }
+        };
+    }, [sound]);
+    
+    const playSound = async () => {
+        try {
+            const { sound: soundObject } = await Audio.Sound.createAsync(linkMp3);
+            setSound(soundObject);
+            await soundObject.playAsync();
+        } catch (error) {
+            console.error('Không thể phát âm thanh:', error);
+        }
+    };
+    
+    console.log('link file:', linkMp3);
+    
     return ( 
         <View style={styles.container}>
             <View style={styles.headerWrapper}>
                 <TouchableOpacity style={styles.preWrapper}>
                     <Image style={styles.preImg} source={require("../../../assets/images/preImg.png")}></Image>
-                    <Text style={styles.preTxt}>Trang chủ</Text>
+                    {/* <Text style={styles.preTxt}>Trang chủ</Text> */}
                 </TouchableOpacity>
-                <Text style={styles.headerTxt}>Từ vựng Toiec - 0%</Text>
+                <Text style={styles.headerTxt}>Từ vựng IELTS - 0%</Text>
             </View>
             <View style={styles.bodyWrapper}>
+                <Image style={styles.pngSearchWrapper} source={require("../../../assets/images/icon _search_.png")}></Image>
                 <TouchableOpacity style={styles.searchWrapper}>
-                    <Image style={{width:20,height:20, paddingLeft:20}} source={require("../../../assets/images/icon _search_.png")}></Image>
-                    <TextInput style={styles.timKiemTxt} placeholder='Tìm từ trong thư mục' ></TextInput>
+                    <TextInput style={styles.timKiemTxt} placeholder='Tìm từ trong thư mục' 
+                    onChangeText={(text) => searchFilterFunction(text)}
+                    >
+                    </TextInput>
                 </TouchableOpacity>
             </View>
             <View>
                 <FlatList
-                    data={data}
-                    renderItem={({item}) => <Item id={item.id} tu={item.tu} phienAm={item.phienAm} nghia={item.nghia}></Item>}
+                    data={filteredData1}
+                    renderItem={({item}) => <Item id={item.id} tu={item.tu} phienAm={item.phienAm} nghia={item.nghia} linkMp3Item={item.linkMP3}></Item>}
                 ></FlatList>
             </View>
             <View style={styles.footerWrapper}>

@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     },
     headerWrapper:{
         width:"100%",
-        height:100,
+        // height:100,
+        height:70,
         backgroundColor:"rgba(1, 86, 167, 1)",
         flexDirection:"row",
         alignItems:"center",
@@ -43,39 +44,49 @@ export const styles = StyleSheet.create({
         alignItems:"center",
     },
     searchWrapper:{
-        width:"90%",
+        width:"97%",
         height:50,
         flexDirection:"row",
         alignItems:"center",
         backgroundColor:"background: rgba(255, 255, 255, 1)",
-        padding:10,
+        padding:0,
         borderRadius:10,
         marginTop:10,
-        marginBottom:10
-
+        marginBottom:10,
+        position:'relative'
+    },
+    pngSearchWrapper:{
+        width:20,
+        height:20, 
+        paddingLeft:20,
+        position:'absolute',
+        top:24,
+        left:29,
+        zIndex:1
     },
     timKiemTxt:{
-        marginLeft:20,
+        // marginLeft:20,
         fontFamily:"Inter",
         fontWeight:400,
         fontSize:16,
         lineHeight:19,
         height:50,
         width:"100%",
+        paddingLeft:60,
     },
     ItemWrapper:{
-        width:"90%",
+        width:"100%",
         backgroundColor:"rgba(255, 255, 255, 1)",
         borderRadius:10,
         marginTop:1,
-
         padding:10,
-        width:357,
+        // width:357,
     },
     tu:{
         fontFamily:"Inter",
         fontWeight:700,
         fontSize:18 ,
+        minWidth:357
     },
     phienAmWrapper:{
         flexDirection:"row",

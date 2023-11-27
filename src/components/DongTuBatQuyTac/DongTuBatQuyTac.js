@@ -7,20 +7,16 @@ import SoundPlayer from 'react-native-sound-player';
 // import { searchFilterFunction } from '../../handle/handleSearch';
 // import { View, Text, CheckBox } from 'react-native-elements';
 // thu vien can cai dat: npm install react-native-elements
-// import Sound from 'react-native-sound';
 import { Audio } from 'expo-av';
 
-function DongTuBatQuyTac() {
-
+function DongTuBatQuyTac({navigation}) {
+    const titleScreen = 'DongTuBatQuyTac';
     const [data,setData] = useState([])
     const [filteredData1, setFilteredData1] = useState([]);
     //read file am thanh mp3
     const [sound, setSound] = useState();
-    var [linkMp3, setLinkMp3] = useState();
-    // var linkMp3 = ''
+    // var [linkMp3, setLinkMp3] = useState();
     var linkMp3 = '';
-    // var linkMp3 = require('../../../assets/mp3/file.mp3');
-    // setLinkMp3("require('../../../assets/mp3/file.mp3')")
     useEffect(
         ()=>{
             getListData()
@@ -43,7 +39,9 @@ function DongTuBatQuyTac() {
     const [isChecked, setIsChecked] = useState(false);
     console.log(data);
     const Item = ({id, tu, phienAm, nghia, p, pp, linkMp3Item}) => (
-        <View style={styles.ItemWrapper}>
+        <TouchableOpacity style={styles.ItemWrapper} onPress={()=>{
+            navigation.navigate('WordDetail',{tu:tu,phienAm:phienAm,nghia:nghia,p:p, pp:pp, titleScreen:titleScreen})
+        }}>
             {/* <Text disabled style={{position:"relative"}}></Text> */}
             <Text style={[styles.ItemTu,{fontWeight:700},{marginLeft:36}]} >{tu}</Text>
             <Text style={[styles.ItemTu,{marginLeft:36}]}>{phienAm}</Text>
@@ -64,14 +62,7 @@ function DongTuBatQuyTac() {
                 />
             </TouchableOpacity>
             <TouchableOpacity style={styles.cicrleWrapper} onPress={()=>{
-                // linkMp3=linkMp3Item
-                setLinkMp3(linkMp3Item)
-                console.log("---------------")
-                console.log(linkMp3Item)
-                
-                console.log("---------------")
                 linkMp3 = require('../../../assets/mp3/file.mp3');
-                console.log(linkMp3)
                 renderSound
                 playSound()
             }}>                
@@ -84,7 +75,7 @@ function DongTuBatQuyTac() {
             </TouchableOpacity>
             <Text style={[{color:"rgba(211, 50, 205, 1)"},styles.p]}>P</Text>
             <Text style={[{color:"rgba(211, 50, 205, 1)"},styles.pp]}>PP</Text>
-        </View>
+        </TouchableOpacity>
     )
 
     const searchFilterFunction = (text) => {
@@ -101,7 +92,6 @@ function DongTuBatQuyTac() {
     }
 
     // //read file am thanh mp3
-    
     const renderSound = useEffect(() => {
         return () => {
             if (sound) {
@@ -127,20 +117,19 @@ function DongTuBatQuyTac() {
             <View style={styles.headerWrapper}>
                 <TouchableOpacity style={styles.preWrapper}>
                     <Image style={styles.preImg} source={require("../../../assets/images/preImg.png")}></Image>
-                    <Text style={styles.preTxt}>Trang chủ</Text>
+                    <Text style={styles.preTxt}></Text>
                 </TouchableOpacity>
                 <Text style={styles.headerTxt}>Động từ bất quy tắt - 0%</Text>
             </View>
             <View style={styles.bodyWrapper}>
+                <Image style={styles.pngSearchWrapper} source={require("../../../assets/images/icon _search_.png")}></Image>
                 <TouchableOpacity style={styles.searchWrapper}>
-                    <Image style={{width:20,height:20, paddingLeft:20}} source={require("../../../assets/images/icon _search_.png")}></Image>
                     <TextInput style={styles.timKiemTxt} underlineColorAndroid="transparent" placeholder='Tìm từ trong thư mục' 
-                    
-                    onChangeText={
-                        (text) => {
-                            searchFilterFunction(text)
+                        onChangeText={
+                            (text) => {
+                                searchFilterFunction(text)
+                            }
                         }
-                    }
                     ></TextInput>
                 </TouchableOpacity>
             </View>
@@ -155,18 +144,17 @@ function DongTuBatQuyTac() {
                     <Text style={styles.btnTxt}>Game</Text>
                 </TouchableOpacity>
                 <View>
-                <View style={styles.btnWrapper2}>
-                    <TouchableOpacity style={styles.btnWrapper3}>
-                        <Text style={styles.btnTxt}>Ôn tập</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnWrapper3}>
-                        <Text style={styles.btnTxt}>Tập viết</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnWrapper3}>
-                        <Text style={styles.btnTxt}>Luyện tập</Text>
-                    </TouchableOpacity>
-                </View>
-                <Button title='click' onPress={playSound}></Button>
+                    <View style={styles.btnWrapper2}>
+                        <TouchableOpacity style={styles.btnWrapper3}>
+                            <Text style={styles.btnTxt}>Ôn tập</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.btnWrapper3}>
+                            <Text style={styles.btnTxt}>Tập viết</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.btnWrapper3}>
+                            <Text style={styles.btnTxt}>Luyện tập</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
            </View>
         </View>

@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     },
     inputWrapper:{
         backgroundColor:"background: rgba(250, 250, 250, 1)",
-        width:"95%",
+        width:"100%",
         height:150,
         marginTop:10,
         borderRadius:10,
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
         height:25,
         position:"absolute",
         right:10,
-        top:58,
+        top:9,
         padding:10
     },
     optionWrapper:{
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
         marginRight:10
     },
     btnChoiceWrapper:{
-        width:"95%",
+        width:"100%",
         height:52,
         flexDirection:"row",
         justifyContent:"space-around",
@@ -100,18 +100,21 @@ export const styles = StyleSheet.create({
         fontWeight:500
     },
     optionImgTrash:{
-        marginLeft:285,
-        marginTop:30
+        marginLeft:319,
+        marginTop:30,
+        marginBottom:20,
+        // marginRight:30
     },
     footertWrapper:{
-        width:"95%",
+        minWidth:256,
         flexDirection:"row",
         justifyContent:"space-between",
         backgroundColor:"rgba(255, 255, 255, 1)",
         borderRadius:10,
         height:72,
         alignItems:"center",
-        marginTop:20
+        marginTop:10,
+        padding:10,
     },
     resultWrapper:{
         width:"70%",
@@ -122,7 +125,7 @@ export const styles = StyleSheet.create({
         fontFamily:"Inter",
         fontWeight:400,
         fontSize:18,
-
+        minWidth:256
     },
     iconWrapper:{
         width:"30%",
