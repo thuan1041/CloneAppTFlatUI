@@ -106,14 +106,14 @@ export const Screen_Home = ({navigation}) => {
                     </View>
 
                     <View style={{marginTop: 6}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP}  onPress={()=>{navigation.navigate('DichVanBan')}} >
                             <Image style={styles.imgInOP} source={require('../../../assets/images/2.png')}></Image>
                             <Text style={styles.textInOP}> Dịch văn bản </Text>
                         </Pressable>
                     </View>
 
                     <View style={{marginTop: 6}}>
-                        <Pressable style={styles.buttonOP}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate("UngDungHocTiengAnhKhac")}}>
                             <Image style={styles.imgInOP} source={require('../../../assets/images/9.png')}></Image>
                             <Text style={styles.textInOP}> Ứng dụng học tiếng anh khác </Text>
                         </Pressable>
@@ -127,17 +127,17 @@ export const Screen_Home = ({navigation}) => {
 
                         <View style={{flexDirection: 'row', marginTop: 6}}>
                             <View >
-                                <Pressable>
+                                <Pressable onPress={() =>{navigation.navigate('DongTuBatQuyTac')}} >
                                     <Text style={styles.textInOP}> Động từ bất quy tắc </Text>
                                 </Pressable>
 
-                                <Pressable style={{marginTop: 14}}>
+                                <Pressable style={{marginTop: 14}} onPress={() =>{navigation.navigate('TuVungIELTS')}}>
                                     <Text style={styles.textInOP}> Từ vựng IELTS </Text>
                                 </Pressable>
                             </View>
 
                             <View style={{marginLeft: 30}}>
-                                <Pressable>
+                                <Pressable  onPress={() =>{navigation.navigate('TuVungToeic')}}>
                                     <Text style={styles.textInOP}> Từ vựng TOEIC </Text>
                                 </Pressable>
 
@@ -149,7 +149,7 @@ export const Screen_Home = ({navigation}) => {
                     </View>
 
                     <View style={{marginTop: 20}}>
-                        <Pressable style={styles.buttonOP} onPress={()=>{alert('cài đặt nè:)')}}>
+                        <Pressable style={styles.buttonOP} onPress={()=>{navigation.navigate('CaiDat')}}>
                         <Image style={styles.imgInOP} source={require('../../../assets/images/5.png')}></Image>
                             <Text style={styles.textInOP}> Cài đặt </Text>
                         </Pressable>

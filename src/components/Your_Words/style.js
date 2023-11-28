@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 
     header: {
         backgroundColor: '#0156A7',
-        height: 100,
+        height: 70,
         flexDirection:'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -64,8 +64,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 8,
-        
+        // marginTop: 8,
     },
 
     btnOP: {
@@ -149,7 +148,7 @@ export const styles = StyleSheet.create({
     },
 
     viewOP: {
-        marginTop: 100,
+        marginTop: 80,
         alignItems:'center'
     }
 

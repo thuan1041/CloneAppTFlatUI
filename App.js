@@ -12,6 +12,13 @@ import { VIP_SGKNEW } from './src/components/VIP_SGKNEW/VIP_SGKNEW';
 import { Translate_Dictionary } from './src/components/Translate_Dictionary/Translate_Dictionary';
 import { Translate_English } from './src/components/Translate_English/Translate_English';
 import { Dictionary_AnhViet } from './src/components/Dictionary_AnhViet/Dictionary_AnhViet';
+import { CaiDat } from './src/components/CaiDat/CaiDat';
+import { DichVanBan } from './src/components/DichVanBan/DichVanBan';
+import { UngDungHocTiengAnhKhac } from './src/components/UngDungHocTiengAnhKhac/UngDungHocTiengAnhKhac';
+import { DongTuBatQuyTac } from './src/components/DongTuBatQuyTac/DongTuBatQuyTac';
+import { TuVungIELTS } from './src/components/TuVungIELTS/TuVungIELTS';
+import { TuVungToeic } from './src/components/TuVungToeic/TuVungToeic';
+import { WordDetail } from './src/components/Word_Detail/WordDetail';
 
 
 const Stack= createNativeStackNavigator();
@@ -95,6 +102,62 @@ export default function App() {
         <Stack.Screen
           name="Dictionary_AnhViet"
           component={Dictionary_AnhViet}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="CaiDat"
+          component={CaiDat}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="DichVanBan"
+          component={DichVanBan}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="UngDungHocTiengAnhKhac"
+          component={UngDungHocTiengAnhKhac}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="DongTuBatQuyTac"
+          component={DongTuBatQuyTac}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="TuVungIELTS"
+          component={TuVungIELTS}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="TuVungToeic"
+          component={TuVungToeic}
+          options={{
+            headerShown: false
+          }}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="WordDetail"
+          component={WordDetail}
           options={{
             headerShown: false
           }}

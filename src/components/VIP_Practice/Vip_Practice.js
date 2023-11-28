@@ -6,9 +6,6 @@ import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const Vip_Practice = ({navigation}) => {
-    // const [font] = useFonts({
-    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    // });
 
     const data= [
         {

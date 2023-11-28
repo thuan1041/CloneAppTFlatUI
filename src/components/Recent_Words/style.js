@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 
     header: {
         backgroundColor: '#0156A7',
-        height: 100,
+        height: 70,
         flexDirection:'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
     viewSearchInput: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 110,
+        marginTop: 80,
     },
 
     viewItem: {

@@ -6,9 +6,6 @@ import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const Account = ({navigation}) => {
-    // const [font] = useFonts({
-    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    // });
 
     return (
         <View style={styles.container}>

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 
     header: {
         backgroundColor: '#0156A7',
-        height: 100,
+        height: 70,
         flexDirection:'row',
         // justifyContent: 'space-between',
         alignItems: 'center',
@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     body: {
         marginLeft: 8, 
         marginRight: 8,
-        marginTop: 100,
+        marginTop: 70,
         marginBottom: 35
     },
 

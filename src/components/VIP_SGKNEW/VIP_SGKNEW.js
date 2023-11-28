@@ -6,10 +6,6 @@ import { useFonts } from 'expo-font';
 import { styles } from './style';
 
 export const VIP_SGKNEW = ({navigation}) => {
-    // const [font] = useFonts({
-    //     'Inder': require('../../../assets/fonts/Inder-Regular.ttf'),
-    // });
-
     const data= [
         {
             id: 1,

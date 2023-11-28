@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 
     header: {
         backgroundColor: '#0156A7',
-        height: 100,
+        height: 70,
         flexDirection:'row',
         alignItems: 'center'
     },
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 10,
         marginRight: 10,
-        marginTop: 30,
+        marginTop: 20,
         textAlign: 'center',
         fontWeight: '400'
     },
@@ -72,6 +72,6 @@ export const styles = StyleSheet.create({
 
     body: {
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 180
     },
 });

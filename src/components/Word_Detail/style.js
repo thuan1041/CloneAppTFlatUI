@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#E6E6E6'
+        // backgroundColor: '#E6E6E6'
     },
 
     header: {
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
 
     textBack: {
         // fontFamily: 'Inder',
-        fontSize: 18,
+        fontSize: 20,
         color: '#FFFFFF',
         marginLeft: 10
     },
@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     body: {
         backgroundColor: '#FaFaFa',
         width: '100%',
-        height: 685,
+        height: 650,
         marginTop: 70
     },
 
