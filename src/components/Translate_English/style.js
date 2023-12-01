@@ -80,7 +80,14 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '400',
         marginTop: 10,
-    }
+    },
+
+    textP: {
+        fontSize: 20,
+        fontWeight: '400',
+        marginLeft: 20
+    },
+    
     
 
 });

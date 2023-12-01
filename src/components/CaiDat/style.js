@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         justifyContent:"flex-start",
         marginLeft:10,
         // backgroundColor: 'violet'
+        alignItems: 'center'
     },
     preImg:{
         width:12,

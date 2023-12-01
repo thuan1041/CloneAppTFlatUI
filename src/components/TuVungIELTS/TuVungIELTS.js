@@ -123,12 +123,12 @@ export const TuVungIELTS = ({navigation}) => {
                     </TextInput>
                 </TouchableOpacity>
             </View>
-            <View>
-                <FlatList
-                    data={filteredData1}
-                    renderItem={({item}) => <Item id={item.id} tu={item.tu} phienAm={item.phienAm} nghia={item.nghia} linkMp3Item={item.linkMP3}></Item>}
-                ></FlatList>
-            </View>
+            
+            <FlatList
+                data={filteredData1}
+                renderItem={({item}) => <Item id={item.id} tu={item.tu} phienAm={item.phienAm} nghia={item.nghia} linkMp3Item={item.linkMP3}></Item>}
+            ></FlatList>
+            
             {/* <View style={styles.footerWrapper}>
                 <TouchableOpacity style={styles.btnWrapper}>
                     <Text style={styles.btnTxt}>Game</Text>

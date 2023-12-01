@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         flexDirection:"row",
         justifyContent:"flex-start",
         marginLeft:10,
+        alignItems:"center"
     },
     preImg:{
         width:12,

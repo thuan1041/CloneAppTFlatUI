@@ -6,9 +6,22 @@ import { useFonts } from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCamera, faMobileScreen, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
+import { useRef } from 'react';
+// import { RNCamera } from 'react-native-camera';
 
 
 export const Screen_Home = ({navigation}) => {
+    const cameraRef = useRef(null);
+    // const [image, setImage] = useState(null);
+
+    // const takePicture = async () => {
+    //     if (cameraRef.current) {
+    //         const options = { quality: 0.5, base64: true };
+    //         const data = await cameraRef.current.takePictureAsync(options);
+    //         setImage(data.uri);
+    //     }
+    // }
+
     const [text, setText] = useState('');
 
     const handleTextSubmit = () => {
@@ -39,9 +52,11 @@ export const Screen_Home = ({navigation}) => {
                             <Text style={styles.textOP}> Dịch màn hình </Text>
                         </View>
 
-                        <View style={{alignItems: 'center'}}>
-                            <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
-                            <Text style={styles.textOP}> Dịch máy ảnh </Text>
+                        <View>
+                            <Pressable  style={{alignItems: 'center'}} >
+                                <FontAwesomeIcon style={{color: '#FFFFFF'}} size={25}  icon={faCamera} />
+                                <Text style={styles.textOP}> Dịch máy ảnh </Text>
+                            </Pressable>
                         </View>
 
                         <View style={{alignItems: 'center'}}>

@@ -8,13 +8,14 @@ import { styles } from './style';
 
 export const Translate_English = ({route, navigation}) => {
     const { english} = route.params;
-    // const english = 'noxt'
+    // const english = 'apple'
     
     const [data, setData] = useState([]); 
 
     const [mean, setMean] = useState(null);
     const [cntEng, setCntEng] = useState(null);
     const [cntViet, setCntViet] = useState(null);
+    const [p, setP] = useState(null);
 
     const [isMeanInitialized, setIsMeanInitialized] = useState(false);
     
@@ -43,11 +44,13 @@ export const Translate_English = ({route, navigation}) => {
             setMean(foundItem.mean);
             setCntEng(foundItem.cntEng);
             setCntViet(foundItem.cntViet);
+            setP(foundItem.p);
             setIsMeanInitialized(true);
         } else {
             setMean(english);
             setCntEng("");
             setCntViet("");
+            setP("");
             setIsMeanInitialized(true);
         }
       }, [data, english]);
@@ -55,6 +58,7 @@ export const Translate_English = ({route, navigation}) => {
     // console.log(mean);
     // console.log(cntEng);
     // console.log(cntViet);
+    // console.log(p);
 
     //them api recent words
     const addNewPost = async () => {
@@ -64,7 +68,7 @@ export const Translate_English = ({route, navigation}) => {
                 headers: {
                 'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ english: english, mean: mean }),
+                body: JSON.stringify({ english: english, mean: mean, p: p }),
             });
         
             if (response.ok) {
@@ -105,12 +109,15 @@ export const Translate_English = ({route, navigation}) => {
 
             <View style={styles.body}>
                 <View style={{marginLeft: 10, marginTop: 25, marginRight: 5}}> 
-                    <Text style={styles.textMean}>{english.toLowerCase()}</Text>
-                    {/* <Text style={[styles.textDT, {marginTop: 20}]}>danh từ</Text> */}
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.textMean}>{english.toLowerCase()}</Text>
+                        <Text style={styles.textP}> {p} </Text>     
+                    </View>
                
                     <View style={styles.viewMean}>
                         <FontAwesomeIcon color='violet' size={16} icon={faArrowRight} />
                         <Text style={styles.textEnglish}>{mean}</Text>
+                        
                     </View>
 
                     <View style={{justifyContent: 'center'}}>

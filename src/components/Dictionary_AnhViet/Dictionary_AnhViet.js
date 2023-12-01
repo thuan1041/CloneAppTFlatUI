@@ -8,6 +8,7 @@ import { styles } from './style';
 export const Dictionary_AnhViet = ({navigation}) => {
 
     const [data, setData] = useState([]);
+    const [searchKeyword, setSearchKeyword] = useState('');
 
     useEffect(() => {
         fetch('https://656046a683aba11d99d0843a.mockapi.io/apiTuDien')
@@ -16,6 +17,10 @@ export const Dictionary_AnhViet = ({navigation}) => {
             setData(json);
         })
     }, [])
+
+    const filteredData = data.filter(item =>
+        item.mean.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
 
     const renderItem = (item) => (
         <View key={item.id} style={{alignItems: 'center'}}>
@@ -41,7 +46,7 @@ export const Dictionary_AnhViet = ({navigation}) => {
             <View style={{alignItems: 'center'}}>
                 <View style={styles.viewSearchInput}>
                     <FontAwesomeIcon style={{zIndex: 0, marginRight: -30, opacity: 0.5}} size={20} icon={faMagnifyingGlass} />
-                    <TextInput style={styles.searchInput} placeholder='Nhập từ tiếng việt' ></TextInput>
+                    <TextInput style={styles.searchInput} placeholder='Nhập từ tiếng việt' onChangeText={ text => setSearchKeyword(text)} value={searchKeyword} ></TextInput>
                     <FontAwesomeIcon style={{marginLeft: -30, opacity: 0.5}} size={20} icon={faMicrophone} />
                 </View>
             </View>
@@ -49,7 +54,7 @@ export const Dictionary_AnhViet = ({navigation}) => {
             
             <ScrollView style={styles.body}>
                 {
-                    data.map(renderItem)
+                    filteredData.map(renderItem)
                 }
             </ScrollView>
            

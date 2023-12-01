@@ -47,6 +47,7 @@ export const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 8, 
         marginRight: 8,
+        // alignItems: 'center',
     },
 
     searchInput: {
@@ -89,7 +90,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         flexDirection: 'row',
         borderRadius: 8,
-        marginTop: 1,
+        marginTop: 1
     },
 
     textWord: {

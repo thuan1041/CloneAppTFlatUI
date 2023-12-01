@@ -55,19 +55,21 @@ export const Your_Words = ({navigation}) => {
     ]
 
     const renderItem = ({item}) => (
-        <View style={styles.viewItem}>
-            <View style={{marginLeft: 10}}>
-                <FontAwesomeIcon color='#0156A7' size={23} icon={faSquare} />
-            </View>
+        <View style={{alignItems:'center', marginTop: 10}}>
+            <View style={styles.viewItem}>
+                <View style={{marginLeft: 10}}>
+                    <FontAwesomeIcon color='#0156A7' size={23} icon={faSquare} />
+                </View>
 
-            <View style={{marginLeft: 15}}>
-                <Text style={styles.textWord}> {item.word} </Text>
-                <Text style={styles.textMean}> {item.mean} </Text>
-            </View>
+                <View style={{marginLeft: 15}}>
+                    <Text style={styles.textWord}> {item.word} </Text>
+                    <Text style={styles.textMean}> {item.mean} </Text>
+                </View>
 
-            <View style={styles.viewFunc}>
-                <FontAwesomeIcon style={styles.volOP} size={21} color='#0156A7' icon={faVolumeHigh} />
-                <FontAwesomeIcon style={styles.volStar} size={21} color='#0156A7' icon={faStar} />
+                <View style={styles.viewFunc}>
+                    <FontAwesomeIcon style={styles.volOP} size={21} color='#0156A7' icon={faVolumeHigh} />
+                    <FontAwesomeIcon style={styles.volStar} size={21} color='#0156A7' icon={faStar} />
+                </View>
             </View>
         </View>
     )
@@ -107,14 +109,12 @@ export const Your_Words = ({navigation}) => {
                 </View>
             </View>
 
-            <ScrollView style={styles.body}>
-                <FlatList
-                    data={Data} 
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id}
-                ></FlatList>  
-            </ScrollView>
-
+            <FlatList
+                data={Data} 
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+            ></FlatList>  
+            
             <View style={styles.footer}>
                 <Pressable style={styles.buttonFooter}>
                     <Text style={styles.textFooter}>Ôn tập</Text>

@@ -5,12 +5,14 @@ import { faChevronLeft, faBars, faMagnifyingGlass, faMicrophone, faVolumeHigh } 
 import { faSquare, faStar } from '@fortawesome/free-regular-svg-icons';
 import { useFonts } from 'expo-font';
 import { styles } from './style';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 export const Recent_Words = ({route, navigation}) => {
     // const { change } = route.params;
     const [data, setData] = useState([]);
     const [change, setChange] = useState(false);
     // console.log(change);
+    const [searchKeyword, setSearchKeyword] = useState('');
 
     useEffect(() => {
         fetch('https://656046a683aba11d99d0843a.mockapi.io/apiTuDienRecent')
@@ -32,6 +34,10 @@ export const Recent_Words = ({route, navigation}) => {
         });
     }, [data])
 
+    const filteredData = data.filter(item =>
+        item.english.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
+
     const renderItem = (item) => (
         <View key={item.id} style={{alignItems: 'center'}}>
             <View style={styles.viewItem} >
@@ -40,7 +46,10 @@ export const Recent_Words = ({route, navigation}) => {
                 </View>
 
                 <View style={{marginLeft: 15}}>
-                    <Text style={styles.textWord}> {item.english} </Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.textWord}> {item.english}</Text>
+                        <Text style={{fontSize: 16, fontWeight: '400', marginLeft:15}}> {item.p}</Text>
+                    </View>
                     <Text style={styles.textMean}> {item.mean} </Text>
                 </View>
 
@@ -70,19 +79,14 @@ export const Recent_Words = ({route, navigation}) => {
             <View style={{alignItems: 'center'}}>
                 <View style={styles.viewSearchInput}>
                     <FontAwesomeIcon style={{zIndex: 0, marginRight: -30, opacity: 0.5}} size={20} icon={faMagnifyingGlass} />
-                    <TextInput style={styles.searchInput} placeholder='Tìm từ trong thư mục' ></TextInput>
+                    <TextInput style={styles.searchInput} placeholder='Tìm từ trong thư mục' onChangeText={text => setSearchKeyword(text)} value={searchKeyword} ></TextInput>
                     <FontAwesomeIcon style={{marginLeft: -30, opacity: 0.5}} size={20} icon={faMicrophone} />
                 </View>
             </View>
 
             <ScrollView style={styles.body}> 
-                {/* <FlatList
-                    data={Data} 
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id}
-                ></FlatList> */}
                 {
-                    data.map(renderItem)
+                    filteredData.map(renderItem)
                 }
             </ScrollView>
 
